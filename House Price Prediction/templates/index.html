@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>House Price Prediction</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{{ url_for('static', filename='css/main.css') }}">
+    <script src='main.js'></script>
+
+</head>
+
+<body>
+    <div class="header">
+        <h1> <bold> HOUSE PRICE PREDICTION </bold> </h1>
+    </div>
+    <div class="register_page">
+        <div class="form">
+            <div class="main">
+                <center> ENTER THE FOLLOWING DETAILS </center><br>
+            </div>
+            <form action="{{url_for('predict')}}" method="POST">
+
+                Bedrooms: <input type="number" name='bedrooms' placeholder="Enter the no of Bedrooms"><br>
+                Bathrooms: <input type="number" name='bathrooms' placeholder="Enter the no of Bathrooms"><br>
+                Floors: <input type="number" name='floors' placeholder="Enter the no of Floors"><br>
+                Year of Build: <input type="number" name='yr_built' placeholder="Enter year of Build"><br>
+                <input type="submit" value="predict" class="submit">
+            </form>
+            <p class="main"> House Price is: {{data}}</p>
+        </div>
+
+    </div>
+    <div class="footer">
+        &copy 2022 MVJCE Designed by Sweta Suman Giri
+    </div>
+
+</body>
+
+</html>
